@@ -8,10 +8,11 @@ import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 const NAVIGATION = [
   { kind: "header", title: "Main items" },
-  { segment: "", title: "Dasboard", icon: <DashboardIcon /> },
+  { segment: "dashbord", title: "Dasboard", icon: <DashboardIcon /> },
   { segment: "orders", title: "Orders", icon: <ShoppingCartIcon /> },
   { segment: "products", title: "Products", icon: <LayersIcon /> },
   { segment: "other", title: "Other", icon: <BarChartIcon /> },
+  { segment: "logIn", title: "logIn", }
 ];
 
 const demoTheme = extendTheme({
@@ -35,13 +36,13 @@ function useDemoRouter() {
   return {
     pathname: location.pathname,
     searchParams: new URLSearchParams(location.search),
-    navigate, 
+    navigate,
   };
 }
 
 const Dashbord = () => {
   const router = useDemoRouter("/dashboard");
-  
+
   const demoWindow = typeof window !== "undefined" ? window : undefined;
 
   return (
